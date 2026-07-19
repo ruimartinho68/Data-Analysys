@@ -7,7 +7,7 @@ const { parse } = require('node-html-parser');
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell,
   WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign,
-  TabStopType, LeaderType, HeightRule,
+  TabStopType, LeaderType, HeightRule, Bookmark, InternalHyperlink, PageReference,
 } = require('docx');
 
 // ---------- palette ----------
@@ -174,6 +174,10 @@ function cover(node) {
   }));
 }
 
+// Bookmark anchors for the clickable TOC: hero label text → bookmark id
+// ("Introduction" → "toc_introduction", "Chapter Three" → "toc_chapter_three").
+const heroAnchor = (labelText) => 'toc_' + labelText.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+
 function chHero(node) {
   const st = styleOf(node);
   const bg = hex(st.background || NAVY);
@@ -186,10 +190,15 @@ function chHero(node) {
     spacing: { after: 100 },
     children: [new TextRun({ text: decode(label.text).trim(), font: OSWALD, size: 16, bold: true, allCaps: true, characterSpacing: 45, color: blend(fg, bg, 0.65) })],
   }));
-  if (title) kids.push(new Paragraph({
-    spacing: { after: 120 },
-    children: [new TextRun({ text: decode(title.text).trim(), font: OSWALD, size: 44, bold: true, allCaps: true, color: fg })],
-  }));
+  if (title) {
+    const titleRun = new TextRun({ text: decode(title.text).trim(), font: OSWALD, size: 44, bold: true, allCaps: true, color: fg });
+    kids.push(new Paragraph({
+      spacing: { after: 120 },
+      children: label
+        ? [new Bookmark({ id: heroAnchor(decode(label.text).trim()), children: [titleRun] })]
+        : [titleRun],
+    }));
+  }
   if (desc) kids.push(new Paragraph({
     spacing: { after: 0 },
     children: runsOf(desc, { font: SS3, size: 20, color: blend(fg, bg, 0.85) }),
@@ -725,11 +734,20 @@ function convoGrid(node) {
   out.push(spacer(100));
 }
 
+// "Ch. 3" → the matching hero's bookmark ("toc_chapter_three"); "—" → the
+// Introduction hero. Page numbers are PAGEREF fields, so they always show
+// the chapter's real page and click through to it.
+const NUM_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+function tocAnchor(chText) {
+  const m = chText.match(/(\d+)/);
+  return m ? 'toc_chapter_' + NUM_WORDS[parseInt(m[1], 10) - 1] : 'toc_introduction';
+}
+
 function tocList(node) {
   for (const li of node.querySelectorAll('.toc-item')) {
     const ch = li.querySelector('.toc-ch');
     const name = li.querySelector('.toc-name');
-    const page = li.querySelector('.toc-page');
+    const anchor = tocAnchor(decode(ch.text).trim());
     out.push(new Paragraph({
       spacing: { before: 80, after: 80 },
       border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: LINE } },
@@ -739,8 +757,13 @@ function tocList(node) {
       ],
       children: [
         new TextRun({ text: decode(ch.text).trim(), font: OSWALD, size: 16, bold: true, allCaps: true, characterSpacing: 15, color: NAVY }),
-        new TextRun({ text: '\t' + decode(name.text).trim(), font: SS3, size: 18, color: BODY }),
-        new TextRun({ text: '\t' + decode(page.text).trim(), font: SS3, size: 16, color: TAN }),
+        new TextRun({ text: '\t' }),
+        new InternalHyperlink({
+          anchor,
+          children: [new TextRun({ text: decode(name.text).trim(), font: SS3, size: 18, color: BODY, underline: false })],
+        }),
+        new TextRun({ text: '\t' }),
+        new PageReference(anchor, { hyperlink: true }),
       ],
     }));
   }
@@ -803,6 +826,7 @@ for (const node of els(root)) {
 const doc = new Document({
   creator: 'Lawrence Martin',
   title: 'Screens Down, Family Up — The 7-Day Reset',
+  features: { updateFields: true }, // Word refreshes the PAGEREF fields on open
   styles: {
     default: {
       document: { run: { font: SS3, size: 19, color: BODY } },
