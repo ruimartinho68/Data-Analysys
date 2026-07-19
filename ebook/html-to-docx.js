@@ -7,7 +7,8 @@ const { parse } = require('node-html-parser');
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell,
   WidthType, BorderStyle, ShadingType, AlignmentType, VerticalAlign,
-  TabStopType, LeaderType, HeightRule, Bookmark, InternalHyperlink, PageReference,
+  TabStopType, LeaderType, HeightRule, InternalHyperlink, PageReference,
+  BookmarkStart, BookmarkEnd,
 } = require('docx');
 
 // ---------- palette ----------
@@ -177,6 +178,7 @@ function cover(node) {
 // Bookmark anchors for the clickable TOC: hero label text → bookmark id
 // ("Introduction" → "toc_introduction", "Chapter Three" → "toc_chapter_three").
 const heroAnchor = (labelText) => 'toc_' + labelText.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+let bookmarkSeq = 0; // docx-js's Bookmark wrapper reuses numeric id 1, so we number our own
 
 function chHero(node) {
   const st = styleOf(node);
@@ -192,10 +194,11 @@ function chHero(node) {
   }));
   if (title) {
     const titleRun = new TextRun({ text: decode(title.text).trim(), font: OSWALD, size: 44, bold: true, allCaps: true, color: fg });
+    const n = ++bookmarkSeq;
     kids.push(new Paragraph({
       spacing: { after: 120 },
       children: label
-        ? [new Bookmark({ id: heroAnchor(decode(label.text).trim()), children: [titleRun] })]
+        ? [new BookmarkStart(heroAnchor(decode(label.text).trim()), n), titleRun, new BookmarkEnd(n)]
         : [titleRun],
     }));
   }
@@ -703,6 +706,57 @@ function tmpl(node) {
   out.push(spacer(100));
 }
 
+// .data-table → Word table: navy header row, cream row-label cells,
+// bordered white body cells (matches the book's infographic tables).
+function dataTable(node) {
+  const trs = node.querySelectorAll('tr');
+  if (!trs.length) return;
+  const nCols = trs[0].childNodes.filter((c) => c.nodeType === 1).length;
+  const dw = (node.getAttribute('data-widths') || '').split(',').map(Number).filter((n) => !isNaN(n));
+  let widths;
+  if (dw.length === nCols && dw.some((n) => n > 0)) {
+    const total = dw.reduce((a, b) => a + (b || 1), 0);
+    widths = dw.map((n) => Math.round(CW * (n || 1) / total));
+  } else {
+    const w = Math.floor(CW / nCols);
+    widths = Array.from({ length: nCols }, (_, i) => (i === nCols - 1 ? CW - w * (nCols - 1) : w));
+  }
+  const B = 'C9CFDE';
+  const rows = trs.map((tr) => {
+    const cells = tr.childNodes.filter((c) => c.nodeType === 1);
+    return new TableRow({
+      cantSplit: true,
+      children: cells.map((cell, i) => {
+        const isTh = cell.tagName === 'TH';
+        const isRl = (cell.getAttribute('class') || '').includes('rl');
+        const text = decode(cell.text).replace(/\s+/g, ' ').trim();
+        return new TableCell({
+          width: { size: widths[i], type: WidthType.DXA },
+          shading: isTh ? shade(NAVY) : isRl ? shade('F0EEE4') : undefined,
+          margins: { top: 90, bottom: 90, left: 120, right: 120 },
+          verticalAlign: VerticalAlign.CENTER,
+          borders: { top: bd(isTh ? NAVY : B, 6), bottom: bd(isTh ? NAVY : B, 6), left: bd(isTh ? NAVY : B, 6), right: bd(isTh ? NAVY : B, 6) },
+          children: [new Paragraph({
+            spacing: { after: 0 },
+            children: isTh
+              ? [new TextRun({ text, font: OSWALD, size: 13, bold: true, allCaps: true, characterSpacing: 15, color: CREAM_TXT })]
+              : isRl
+                ? [new TextRun({ text, font: SS3, size: 15, bold: true, color: NAVY })]
+                : runsOf(cell, { font: SS3, size: 15, color: BODY, strongColor: NAVY }),
+          })],
+        });
+      }),
+    });
+  });
+  out.push(spacer(40));
+  out.push(new Table({
+    width: { size: CW, type: WidthType.DXA }, columnWidths: widths,
+    borders: { top: bd(B, 6), bottom: bd(B, 6), left: bd(B, 6), right: bd(B, 6), insideHorizontal: bd('FFFFFF', 12), insideVertical: bd('FFFFFF', 12) },
+    rows,
+  }));
+  out.push(spacer(100));
+}
+
 function convoGrid(node) {
   const cards = els(node);
   const half = CW / 2;
@@ -806,6 +860,7 @@ for (const node of els(root)) {
   else if (cc === 'cklist-box') cklistBox(node);
   else if (cc === 'tmpl') tmpl(node);
   else if (cc === 'convo-grid') convoGrid(node);
+  else if (tag === 'TABLE') dataTable(node);
   else if (tag === 'UL' && cc === 'toc-list') tocList(node);
   else if (tag === 'UL') { // generic list
     for (const li of node.querySelectorAll('li')) out.push(new Paragraph({
