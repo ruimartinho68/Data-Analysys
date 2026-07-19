@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screens Down, Family Up — The 7-Day Reset (Ebook)</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>doc-page:not(:defined){visibility:hidden}</style>
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { animation-delay: -99s !important; animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-fill-mode: both !important; animation-play-state: running !important; transition-duration: 0s !important; }
+    body { font-family: 'Source Sans 3', sans-serif; color: #1C2333; }
+    image-slot { display: block; }
+
+    .cover { background: radial-gradient(ellipse at 30% 20%, #182852 0%, #101B33 60%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 40px; position: relative; overflow: hidden; margin: -0.75in -0.75in 0; min-height: 9.5in; break-after: page; }
+    .cover-photo-wrap, .cover-scrim { display: none; }
+    .cover-inner { position: relative; z-index: 1; max-width: 560px; width: 100%; margin: 0 auto; }
+    .cover-props { display: flex; flex-direction: column; gap: 8px; align-items: center; margin: 26px 0 6px; }
+    .cover-prop { font-size: 12px; color: #DCE3F4; line-height: 1.4; }
+    .cover-prop strong { color: #F0B429; font-weight: 600; }
+    .cover-eyebrow { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #C6D2EE; margin-bottom: 16px; }
+    .cover-rule { width: 40px; height: 3px; background: #F0B429; margin: 0 auto 24px; }
+    .cover-title { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; line-height: 0.98; letter-spacing: 0.5px; }
+    .cover-title .l1 { display: block; font-size: 40px; color: #C6D2EE; }
+    .cover-title .l2 { display: block; font-size: 70px; color: #F0B429; margin-top: 4px; }
+    .cover-subtitle { font-weight: 700; font-size: 16px; color: #EEF1F8; line-height: 1.5; margin: 26px 0 6px; }
+    .cover-badge-wrap { display: flex; justify-content: center; margin: 22px 0 14px; }
+    .cover-badge { position: relative; width: 100px; height: 100px; }
+    .cover-badge svg { width: 100%; height: 100%; }
+    .cover-badge-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #101B33; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; line-height: 1.15; }
+    .cover-badge-text .b1 { font-size: 8px; letter-spacing: 1px; }
+    .cover-badge-text .b2 { font-size: 16px; }
+    .cover-badge-text .b3 { font-size: 9px; letter-spacing: 1px; }
+    .cover-author { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #FDFBF6; margin-top: 18px; }
+    .cover-authortag { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #F0B429; margin-top: 4px; }
+
+    .story-photo, .story-photo x-import { display: none; }
+
+    .ch-hero { margin: -0.75in -0.75in 30px; padding: 38px 0.75in 30px; position: relative; overflow: hidden; break-inside: avoid; }
+    .ch-hero.new-page { break-before: page; }
+    .ch-hero-bg-num { font-family: 'Oswald', sans-serif; font-size: 130px; font-weight: 700; position: absolute; right: 24px; bottom: -18px; line-height: 1; opacity: 0.09; color: currentColor; pointer-events: none; }
+    .ch-hero-label { font-family: 'Oswald', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 9px; opacity: 0.65; }
+    .ch-hero-title { font-family: 'Oswald', sans-serif; font-size: 29px; font-weight: 700; text-transform: uppercase; line-height: 1.12; margin-bottom: 11px; letter-spacing: 0.5px; }
+    .ch-hero-desc { font-size: 13.5px; line-height: 1.6; opacity: 0.85; max-width: 500px; }
+
+    h2 { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; color: #101B33; margin: 24px 0 11px; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.3px; break-after: avoid; }
+    h3 { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; color: #101B33; margin: 20px 0 8px; break-after: avoid; }
+    h4 { font-size: 12.5px; font-weight: 700; color: #101B33; margin: 15px 0 6px; break-after: avoid; }
+    p { font-family: 'Lora', serif; font-size: 12.5px; line-height: 1.6; color: #2C3448; margin-bottom: 10px; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { font-size: 12px; line-height: 1.55; color: #2C3448; margin-bottom: 4px; }
+    strong { color: #101B33; }
+    .ch-rule { height: 1px; background: linear-gradient(90deg, #F0B429, transparent); margin: 28px 0; opacity: 0.4; }
+
+    .lede { font-size: 15px; line-height: 1.6; color: #1C2333; margin-bottom: 12px; }
+    .lede strong { background: linear-gradient(transparent 60%, rgba(240,180,41,0.28) 60%); }
+
+    .pullquote { border-left: 4px solid #F0B429; padding: 12px 18px; margin: 16px 0; background: rgba(240,180,41,0.07); border-radius: 0 8px 8px 0; break-inside: avoid; }
+    .pullquote p { font-family: 'Lora', serif; font-style: italic; font-size: 13.5px; color: #101B33; margin: 0; line-height: 1.5; }
+
+    .callout { border-radius: 8px; padding: 12px 16px; margin: 12px 0; break-inside: avoid; }
+    .callout-label { font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+    .callout p, .callout ul, .callout li { margin-bottom: 0; font-size: 11.5px; line-height: 1.5; }
+    .callout ul { margin-bottom: 0; padding-left: 16px; }
+    .cg { background: #EEF3FB; border: 1px solid #C4D3EE; }
+    .cg .callout-label { color: #2A4C8C; }
+    .ca { background: #FBF4E0; border: 1px solid #EAD394; }
+    .ca .callout-label { color: #8B6914; }
+    .cr { background: #FBEBEA; border: 1px solid #E8B8B0; }
+    .cr .callout-label { color: #B23A2C; }
+    .cd { background: #101B33; color: #FDFBF6; }
+    .cd .callout-label { color: #F0B429; }
+    .cd p, .cd li { color: #C6D2EE; }
+    .cwork { background: #101B33; border: 1px solid #223058; border-left: 4px solid #F0B429; }
+    .cwork .callout-label { color: #F0B429; }
+    .cwork p, .cwork li { color: #DCE3F4; }
+
+    .script-box { border: 2px solid #101B33; border-radius: 8px; margin: 16px 0; overflow: hidden; break-inside: avoid; }
+    .script-head { background: #101B33; color: #F0B429; font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 8px 14px; }
+    .script-body { padding: 12px 16px; }
+    .script-line { margin-bottom: 9px; }
+    .script-who { font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5D6E96; margin-bottom: 3px; }
+    .script-say { background: #EEF3FB; border-radius: 6px; padding: 8px 11px; font-size: 11.5px; line-height: 1.5; color: #101B33; }
+    .script-dont { background: #FBEBEA; border-radius: 6px; padding: 8px 11px; font-size: 11.5px; line-height: 1.5; color: #7A2E22; }
+    .script-quote { background: #FBF4E0; border-radius: 6px; padding: 10px 13px; font-size: 12.5px; line-height: 1.5; color: #3A2F0E; font-style: italic; }
+    .script-why { font-size: 11px; color: #5D6E96; margin-top: 3px; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; break-inside: avoid; }
+    .stat-card { background: #101B33; border-radius: 8px; padding: 14px 10px 12px; text-align: center; break-inside: avoid; }
+    .stat-num { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; color: #F0B429; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 9.5px; color: #C6D2EE; line-height: 1.35; }
+    .stat-source { font-size: 8.5px; color: #5D6E96; margin-top: 4px; }
+
+    .stat-bar-row { margin: 10px 0 14px; }
+    .stat-bar { margin-bottom: 10px; break-inside: avoid; }
+    .stat-bar-label { font-size: 11px; color: #2C3448; margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .stat-bar-label strong { font-family: 'Oswald', sans-serif; font-size: 12px; color: #101B33; }
+    .stat-bar-track { height: 10px; background: #E9E3D3; border-radius: 6px; overflow: hidden; display: flex; }
+    .stat-bar-fill { height: 100%; background: #F0B429; border-radius: 6px 0 0 6px; }
+    .stat-bar-fill.navy { background: #101B33; }
+
+    .case-study { border: 1.5px solid #D6DCEB; border-radius: 8px; padding: 14px 16px; margin: 14px 0; break-inside: avoid; }
+    .case-tag { font-family: 'Oswald', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #2A4C8C; background: #EEF3FB; display: inline-block; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+    .case-study h4 { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; color: #101B33; margin: 0 0 9px; text-transform: uppercase; }
+    .case-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .case-before, .case-after { padding: 10px 12px; border-radius: 6px; font-size: 11px; line-height: 1.5; }
+    .case-before { background: #FBEBEA; }
+    .case-before strong { color: #B23A2C; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .case-after { background: #EEF3FB; }
+    .case-after strong { color: #2A4C8C; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+    .day-schedule { margin: 16px 0; break-inside: avoid; }
+    .sched-head { border-radius: 6px 6px 0 0; padding: 10px 16px; }
+    .sched-head-day { font-family: 'Oswald', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 2px; }
+    .sched-head-name { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; }
+    .sched-body { border: 1.5px solid #E4DCC8; border-top: none; border-radius: 0 0 6px 6px; overflow: hidden; }
+    .sched-item { display: flex; align-items: flex-start; border-bottom: 1px solid #EFE9DA; break-inside: avoid; }
+    .sched-item:last-child { border-bottom: none; }
+    .sched-time { padding: 8px 10px; font-size: 9.5px; font-weight: 700; color: #8A8570; white-space: nowrap; background: #F8F4E8; min-width: 78px; border-right: 1px solid #EFE9DA; flex-shrink: 0; }
+    .sched-content { padding: 8px 12px; font-size: 11px; line-height: 1.5; color: #2C3448; flex: 1; }
+    .sched-content strong { display: block; font-weight: 700; color: #101B33; margin-bottom: 2px; }
+    .sched-content p { font-size: 11px; line-height: 1.5; margin: 0; }
+
+    .two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+    .a-card { border-radius: 6px; padding: 12px 14px; border: 1.5px solid; break-inside: avoid; }
+    .a-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+    .a-card p { font-size: 11px; line-height: 1.5; margin: 0; }
+    .s-card { border-radius: 6px; padding: 12px 14px; background: #F0EEE4; break-inside: avoid; }
+    .s-card h4 { font-size: 12px; font-weight: 700; color: #101B33; margin-bottom: 5px; }
+    .s-card p { font-size: 11px; line-height: 1.5; color: #3C4458; margin: 0; }
+
+    .cklist-box { background: #F8F4E8; border-radius: 8px; padding: 13px 16px; margin: 14px 0; break-inside: avoid; }
+    .cklist-box h4 { font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5D6E96; margin-bottom: 9px; }
+    .ci { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; font-size: 11.5px; color: #2C3448; line-height: 1.4; border-bottom: 1px solid #EFE9DA; }
+    .ci:last-child { border-bottom: none; }
+    .ci-dot { width: 12px; height: 12px; border-radius: 3px; border: 2px solid #C7BFA0; flex-shrink: 0; margin-top: 2px; }
+
+    .tmpl { border: 2px solid #101B33; border-radius: 8px; padding: 16px 20px; margin: 16px 0; break-inside: avoid; }
+    .tmpl-title { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; text-align: center; color: #101B33; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .tmpl-sub { text-align: center; font-size: 10px; color: #5D6E96; margin-bottom: 14px; }
+    .tmpl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .tmpl-section { border: 1px solid #D9D3BF; border-radius: 6px; padding: 9px 11px; break-inside: avoid; }
+    .tmpl-section h5 { font-family: 'Oswald', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5D6E96; margin-bottom: 6px; }
+    .fill-line { border-bottom: 1.5px solid #C7BFA0; height: 18px; margin-bottom: 4px; }
+    .fill-text { font-size: 10.5px; color: #3C4458; line-height: 1.8; }
+    .sig-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; padding-top: 6px; border-top: 1px solid #EDE7D5; margin-top: 3px; }
+    .sig-block label { font-size: 8.5px; color: #8A8570; display: block; margin-bottom: 2px; }
+
+    .convo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+    .convo-card { background: #EEF3FB; border-radius: 6px; padding: 10px 10px 10px 22px; font-size: 11px; font-style: italic; color: #101B33; line-height: 1.45; position: relative; break-inside: avoid; }
+    .convo-card::before { content: '"'; font-family: 'Lora', serif; font-size: 26px; color: #2A4C8C; position: absolute; top: 2px; left: 8px; line-height: 1; opacity: 0.35; }
+
+    .toc-list { list-style: none; margin: 16px 0; padding: 0; }
+    .toc-item { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px solid #E4DCC8; font-size: 12px; }
+    .toc-item .toc-ch { font-family: 'Oswald', sans-serif; font-weight: 600; color: #101B33; text-transform: uppercase; font-size: 10.5px; letter-spacing: 1px; width: 76px; flex-shrink: 0; }
+    .toc-item .toc-name { flex: 1; color: #2C3448; }
+    .toc-item .toc-page { color: #8A8570; font-size: 10.5px; }
+
+    .anc { display: block; height: 0; }
+</style>
+</head>
+<body>
+
+<doc-page size="letter" margin="0.75in">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="cover-eyebrow">Stop Being the Bad Guy Every Single Day</div>
+      <div class="cover-rule"></div>
+      <div class="cover-title"><span class="l1">Screens Down,</span><span class="l2">Family Up</span></div>
+      <div class="cover-subtitle">The 7-Day Reset for Better Sleep, Better Focus, and a Happier Family</div>
+      <div class="cover-props">
+        <div class="cover-prop"><strong>7 days,</strong> not 4 weeks</div>
+        <div class="cover-prop"><strong>Connection-focused,</strong> not clinical</div>
+        <div class="cover-prop"><strong>Ready-to-use scripts,</strong> not theory</div>
+      </div>
+      <div class="cover-badge-wrap">
+        <div class="cover-badge">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#F0B429" stroke-width="2"/>
+            <circle cx="50" cy="50" r="40" fill="#F0B429"/>
+          </svg>
+          <div class="cover-badge-text"><span class="b1">THE</span><span class="b2">7-DAY</span><span class="b3">SYSTEM</span></div>
+        </div>
+      </div>
+      <div class="cover-author">Lawrence Martin</div>
+      <div class="cover-authortag">Father of Three</div>
+    </div>
+  </div>
+
+  <!-- READ THIS FIRST -->
+  <div class="ch-hero new-page" style="background:#101B33;color:#FDFBF6;">
+    <div class="ch-hero-label">Read This First</div>
+    <div class="ch-hero-title">You Are Not Failing</div>
+    <div class="ch-hero-desc">Tonight, somewhere around dinner time, a familiar scene will play out in millions of homes.</div>
+  </div>
+
+  <p class="lede">The food is on the table. The family is together. And the room is silent — not peaceful silent, but the kind of silent where four people stare at four different screens.</p>
+  <p>If that sounds like your house, here is the first thing you need to know: <strong>you are not failing.</strong> You are parenting in a world engineered to steal your family's attention. The apps on your child's device were built by teams of engineers whose job is to keep them scrolling. You were never meant to win that fight with willpower alone — and neither was your child.</p>
+  <p>What you need is not more willpower. It's a <strong>system</strong>. This book gives you one: a 7-day reset that most families feel working by <strong>Day 4</strong> — without taking away a single device, without cold turkey, and without becoming the villain in your own home.</p>
+  <div class="pullquote"><p>Seven days from now, dinner can sound different. Let's begin.</p></div>
+
+  <!-- RESEARCH -->
+  <div class="ch-hero new-page" style="background:#2A4C8C;color:#FDFBF6;">
+    <div class="ch-hero-label">The Data</div>
+    <div class="ch-hero-title">The Research Is Clear</div>
+    <div class="ch-hero-desc">This isn't opinion or nostalgia for a screen-free past. Here is what the data says right now.</div>
+  </div>
+
+  <div class="stat-bar-row">
+    <div class="stat-bar">
+      <div class="stat-bar-label"><span>Teens, 4+ hrs of daily screen time — anxiety symptoms</span><strong>27.1%</strong></div>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:54%;"></div></div>
+    </div>
+    <div class="stat-bar">
+      <div class="stat-bar-label"><span>Teens, under 4 hrs of daily screen time — anxiety symptoms</span><strong>12.3%</strong></div>
+      <div class="stat-bar-track"><div class="stat-bar-fill navy" style="width:25%;"></div></div>
+    </div>
+    <div class="stat-bar">
+      <div class="stat-bar-label"><span>Teens, 4+ hrs daily — depression symptoms</span><strong>25.9%</strong></div>
+      <div class="stat-bar-track"><div class="stat-bar-fill" style="width:52%;"></div></div>
+    </div>
+    <div class="stat-bar">
+      <div class="stat-bar-label"><span>Teens, under 4 hrs daily — depression symptoms</span><strong>9.5%</strong></div>
+      <div class="stat-bar-track"><div class="stat-bar-fill navy" style="width:19%;"></div></div>
+    </div>
+    <div class="stat-source">Source: CDC, National Health Interview Survey, 2021–2023</div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">21 hrs</div><div class="stat-label">a week kids actually spend on screens — parents say 9 hrs would be ideal</div></div>
+    <div class="stat-card"><div class="stat-num">81%</div><div class="stat-label">of children under 13 already own their own device</div></div>
+    <div class="stat-card"><div class="stat-num">59%</div><div class="stat-label">of kids started using screens by age 3</div></div>
+  </div>
+  <div class="stat-source" style="margin-top:-10px;margin-bottom:16px;">Source: Lurie Children's Hospital, 2025</div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">58%</div><div class="stat-label">of 4-year-olds own a tablet — before they start school</div></div>
+    <div class="stat-card"><div class="stat-num">3.5 hrs</div><div class="stat-label">average daily screen time for kids ages 5–8, and rising every year</div></div>
+    <div class="stat-card"><div class="stat-num">85%</div><div class="stat-label">of children ages 5–12 exceed recommended screen-time guidelines</div></div>
+  </div>
+  <div class="stat-source" style="margin-top:-10px;">Sources: Common Sense Media, 2025 · Australian Institute of Family Studies</div>
+
+  <div class="pullquote" style="margin-top:20px;"><p>12 hours a week — an entire waking Saturday — lost to screens, every single week. Every week you wait, the habits get harder to change. The good news: habits that formed fast can be reset fast, when the whole family resets together.</p></div>
+
+  <!-- TOC -->
+  <div class="ch-hero new-page" style="background:#101B33;color:#FDFBF6;">
+    <div class="ch-hero-label">What's Inside</div>
+    <div class="ch-hero-title">Table of Contents</div>
+  </div>
+  <ul class="toc-list">
+    <li class="toc-item"><span class="toc-ch">—</span><span class="toc-name">Introduction</span><span class="toc-page">4</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 1</span><span class="toc-name">Understanding Screen Time's Impact</span><span class="toc-page">5</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 2</span><span class="toc-name">Preparing Your Family for the Reset</span><span class="toc-page">9</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 3</span><span class="toc-name">Days 1–2 — Establishing Boundaries</span><span class="toc-page">17</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 4</span><span class="toc-name">Days 3–4 — Engaging Activities</span><span class="toc-page">31</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 5</span><span class="toc-name">Days 5–6 — Deepening Connections</span><span class="toc-page">45</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 6</span><span class="toc-name">Day 7 — Reflection and Planning</span><span class="toc-page">67</span></li>
+    <li class="toc-item"><span class="toc-ch">Ch. 7</span><span class="toc-name">Long-Term Success Strategies</span><span class="toc-page">88</span></li>
+  </ul>
+
+  <!-- INTRO -->
+  <div class="ch-hero new-page" style="background:#101B33;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">00</div>
+    <div class="ch-hero-label">Introduction</div>
+    <div class="ch-hero-title">The Moment at the Grand Canyon</div>
+    <div class="ch-hero-desc">I never planned to write a parenting book. I was just a dad who noticed that dinner at our house had gone quiet.</div>
+  </div>
+
+  <p>Not the peaceful kind of quiet — the eerie silence of four people scrolling on four different devices. The breaking point came on a family vacation. We stood at the rim of the Grand Canyon, one of the most staggering sights on Earth. My kids glanced at it, snapped a photo, and went straight back to their phones.</p>
+  <p>Standing there, I realized we weren't sharing a life anymore. We were parallel scrolling through one.</p>
+  <p>What followed was months of trial and error — some of it embarrassing, most of it useful — until I found a system that worked for my real, imperfect, busy family. No extreme measures. No guilt trips. No device confiscation standoffs. Seven days, one clear step per day. That system is this book.</p>
+
+  <h2>What Happens Over the 7 Days</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Days 1–2</h4><p>You audit your family's actual screen habits (most parents are surprised) and hold one well-prepared family meeting — exact structure, exact words.</p></div>
+    <div class="s-card"><h4>Days 3–4</h4><p>New screen-free zones and times take effect. Most families notice the first shift here: a real conversation at dinner, a kid who plays instead of asking for the tablet.</p></div>
+    <div class="s-card"><h4>Days 5–6</h4><p>You replace screen time instead of just removing it, using 50+ age-sorted activities that require zero prep.</p></div>
+    <div class="s-card"><h4>Day 7</h4><p>You lock it in — a family agreement everyone signs, plus the maintenance plan that keeps it working after the week ends.</p></div>
+  </div>
+
+  <h2>What This Book Gives You</h2>
+  <div class="cklist-box">
+    <div class="ci"><span class="ci-dot"></span>A clear action plan for each of the 7 days — no guesswork</div>
+    <div class="ci"><span class="ci-dot"></span>Word-for-word conversation tools for the hard moments (bedtime battles, car-ride demands, "but ALL my friends have phones")</div>
+    <div class="ci"><span class="ci-dot"></span>50+ screen-free activities sorted by age, from toddlers to teens</div>
+    <div class="ci"><span class="ci-dot"></span>Printable templates: family agreements, planners, and tracking sheets your kids actually sign</div>
+    <div class="ci"><span class="ci-dot"></span>A long-term maintenance system, including an emergency plan for when old habits creep back</div>
+  </div>
+
+  <div class="callout ca">
+    <div class="callout-label">One thing this book never asks you to do</div>
+    <p>Ban screens. I'm not anti-technology — I love a good Netflix night as much as anyone. This is about balance and connection, not elimination.</p>
+  </div>
+
+  <p>The average family loses 12 hours a week to screens beyond what parents themselves consider healthy. You could get that Saturday back by this time next week. Let's start.</p>
+
+  <!-- SAMPLE SCRIPT -->
+  <div class="ch-hero new-page" style="background:#F0B429;color:#101B33;">
+    <div class="ch-hero-label" style="opacity:0.75;">A Preview of the Tools Inside</div>
+    <div class="ch-hero-title" style="color:#101B33;">A Sample Script</div>
+    <div class="ch-hero-desc" style="opacity:0.85;color:#101B33;">Before we dive in, here's an example of the word-for-word tools you'll find throughout this book — for the most common objection parents hear.</div>
+  </div>
+
+  <div class="script-box">
+    <div class="script-head">The Scenario</div>
+    <div class="script-body">
+      <div class="script-line">
+        <div class="script-who">Your child says</div>
+        <div class="script-quote">"But ALL my friends are allowed! I'm going to be left out of everything!"</div>
+      </div>
+      <div class="script-line">
+        <div class="script-who">Don't say</div>
+        <div class="script-dont">"I don't care what other families do." — This confirms their fear: you don't get it.</div>
+      </div>
+      <div class="script-line">
+        <div class="script-who">Say this instead</div>
+        <div class="script-say">"You're right — a lot of your friends do have more screen time, and I get why that feels unfair. Being left out is a real worry, and I'm not ignoring it. Here's what we'll do: your time with friends is protected — we'll make sure you never miss the things that matter to you. What we're changing is the scrolling-alone time. Can you help me figure out which parts matter most to you, so we protect those first?"</div>
+      </div>
+      <div class="script-why"><strong>Why it works:</strong> You validated the feeling, separated connection (protected) from consumption (limited), and handed them a role in the decision. Kids fight rules imposed on them. They defend rules they helped design.</div>
+    </div>
+  </div>
+  <p>Every hard conversation in this reset has a script like this one — you'll never have to improvise under pressure.</p>
+
+  <!-- CHAPTER 1 -->
+  <div class="ch-hero new-page" style="background:#2D6A8C;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">1</div>
+    <div class="ch-hero-label">Chapter One</div>
+    <div class="ch-hero-title">Understanding Screen Time's Impact</div>
+    <div class="ch-hero-desc">Before you change anything, understand what you're actually dealing with — and why it matters more than you think.</div>
+  </div>
+
+  <h2>How Screens Are Used</h2>
+  <p>Social media (TikTok, Instagram, Facebook) accounts for 2–3 hours daily; video gaming takes 1–3 hours; streaming services consume 2–4 hours; educational apps and homework add another 1–2 hours. The total frequently exceeds the waking hours available for everything else combined.</p>
+
+  <h2>The Negative Impact on Families</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Communication Breakdown</h4><p>Families report being physically together but emotionally disconnected. The dinner table has become a silent space where each person scrolls rather than shares.</p></div>
+    <div class="s-card"><h4>Psychological Effects</h4><p>Increased anxiety and depression in adolescents, attention difficulties, sleep disruption from blue light, decreased physical activity, weakened family bonds.</p></div>
+    <div class="s-card"><h4>Physical Health Concerns</h4><p>Eye strain, poor posture leading to neck and back pain, reduced sleep quality, and the effects of a sedentary lifestyle.</p></div>
+    <div class="s-card"><h4>The Positive Side</h4><p>Video calls with distant family, educational apps with parental involvement, movie nights, creative tools. The key is <em>intentional use</em> rather than mindless consumption.</p></div>
+  </div>
+
+  <div class="case-study">
+    <span class="case-tag">Case Study</span>
+    <h4>The Garcia Family</h4>
+    <div class="case-row">
+      <div class="case-before"><strong>Before</strong>Dinner together every night, but each person on their phone. Conversations limited to "pass the salt." Their teenage daughter felt lonely despite being surrounded by family.</div>
+      <div class="case-after"><strong>After</strong>They implemented "Tech-Free Sundays." Within a month they felt more connected — their daughter opened up about school struggles, and family laughter returned.</div>
+    </div>
+  </div>
+
+  <h2>Self-Assessment: Family Screen Time Audit</h2>
+  <p>Write down your answers honestly — you'll revisit them on Day 7 to measure how much has changed.</p>
+  <div class="cklist-box">
+    <h4>Reflection Questions</h4>
+    <div class="ci"><span class="ci-dot"></span>How many hours does each family member spend on screens daily?</div>
+    <div class="ci"><span class="ci-dot"></span>How many tech-free family meals do you have per week?</div>
+    <div class="ci"><span class="ci-dot"></span>When did you last have a 30-minute conversation without device interruptions?</div>
+    <div class="ci"><span class="ci-dot"></span>What emotions arise during family screen time — isolation, connection, frustration, enjoyment?</div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="ch-hero new-page" style="background:#3E7A5A;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">2</div>
+    <div class="ch-hero-label">Chapter Two</div>
+    <div class="ch-hero-title">Preparing Your Family for the Reset</div>
+    <div class="ch-hero-desc">Jumping in without preparation leads to resistance and failure. Proper preparation means getting buy-in from everyone.</div>
+  </div>
+
+  <div class="callout ca">
+    <div class="callout-label">Why This Matters</div>
+    <p>Families that spend 60 minutes on a family meeting before Day 1 are dramatically more likely to complete the full 7 days.</p>
+  </div>
+
+  <h2>The Family Meeting: Step-by-Step</h2>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#3E7A5A;color:#FDFBF6;">
+      <div class="sched-head-day">Before You Begin</div>
+      <div class="sched-head-name">60-Minute Family Meeting</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">0–15 min</div><div class="sched-content"><strong>Open Discussion</strong><p>What do screens take away from our family time? What would we like to try instead?</p></div></div>
+      <div class="sched-item"><div class="sched-time">15–30 min</div><div class="sched-content"><strong>Address Concerns</strong><p>What are your biggest concerns about reducing screen time? How can we support each other?</p></div></div>
+      <div class="sched-item"><div class="sched-time">30–50 min</div><div class="sched-content"><strong>Create the Agreement</strong><p>Fill in the Family Screen Time Agreement together. Every person contributes and signs.</p></div></div>
+      <div class="sched-item"><div class="sched-time">50–60 min</div><div class="sched-content"><strong>The "Last Screen Night"</strong><p>Watch a favorite movie, order takeout, take a "before" photo of everyone on devices, then charge everything centrally. Creates closure and builds anticipation.</p></div></div>
+    </div>
+  </div>
+
+  <h2>Family Screen Time Agreement</h2>
+  <div class="tmpl">
+    <div class="tmpl-title">Family Screen Time Agreement</div>
+    <div class="tmpl-sub">We, the _____________ family, commit from [Start Date] to [End Date]</div>
+    <div class="tmpl-grid">
+      <div class="tmpl-section"><h5>Screen-Free Zones</h5><div class="ci" style="font-size:10.5px;"><span class="ci-dot"></span>Dining room during meals</div><div class="ci" style="font-size:10.5px;"><span class="ci-dot"></span>Bedrooms after 8 PM</div><div class="ci" style="font-size:10.5px;border-bottom:none;"><span class="ci-dot"></span>Living room during family time</div></div>
+      <div class="tmpl-section"><h5>Daily Limits</h5><div class="fill-text">Parent 1: <span style="border-bottom:1px solid #C7BFA0;display:inline-block;width:30px;"></span> hrs &nbsp; Parent 2: <span style="border-bottom:1px solid #C7BFA0;display:inline-block;width:30px;"></span> hrs<br />Child 1: <span style="border-bottom:1px solid #C7BFA0;display:inline-block;width:30px;"></span> hrs &nbsp; Child 2: <span style="border-bottom:1px solid #C7BFA0;display:inline-block;width:30px;"></span> hrs</div></div>
+      <div class="tmpl-section"><h5>Always Allowed</h5><div class="fill-text">Educational homework · Video calls with family · Scheduled movie nights</div></div>
+      <div class="tmpl-section"><h5>Rewards for Success</h5><div class="fill-text">Weekly: <div class="fill-line"></div>End of reset: <div class="fill-line"></div></div></div>
+    </div>
+    <div class="sig-row">
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Date</label><div class="fill-line"></div></div>
+    </div>
+  </div>
+
+  <div class="callout cwork">
+    <div class="callout-label">Working Parents: How to Run This Reset</div>
+    <p>The daily plans in Chapters 3–6 are written as full days. If you work outside the home, don't skip the reset — re-map it. Start on a Saturday: Day 1 falls on Saturday, Day 2 on Sunday, Days 3–6 on Monday through Thursday, Day 7 on the following Saturday. Weekday template: screen-free breakfast, devices parked before school/work, the first hour home is screen-free for everyone (including your phone), then run that day's core evening activity from 6–9 PM. Move the big daytime activities — the nature outing, the backyard lunch, the family hike — to the second weekend, so they become your Day 7 celebration instead of an obstacle.</p>
+  </div>
+
+  <h2>Understanding Your Family's Screen Relationship</h2>
+  <div class="convo-grid">
+    <div class="convo-card">Are screens primarily used for education, entertainment, or both?</div>
+    <div class="convo-card">Do screens enhance or hinder our family interactions?</div>
+    <div class="convo-card">What triggers excessive screen use — boredom, stress, habit, peer pressure?</div>
+    <div class="convo-card">How does each family member feel about their own screen habits?</div>
+  </div>
+
+  <h2>Preparing for Resistance</h2>
+  <p>Resistance is normal — especially from teens, and from any adult who hasn't examined their own habits. Validate feelings first, then hold firm on the agreement.</p>
+  <div class="callout ca">
+    <div class="callout-label">Role-Playing Exercise</div>
+    <p>Before Day 1, practice the hard conversations. One person plays the "resistant child," another practices responding with empathy and firmness. Rehearsing now prevents in-the-moment blowups later.</p>
+  </div>
+
+  <h2>The Weekly Activity Planning Template</h2>
+  <p>Before Day 1, sketch a rough plan for each of the seven days — you'll refine it as you go, but knowing tonight's activity in advance removes the single biggest source of reset failure: standing around at 6 PM with a bored family and no plan.</p>
+
+  <h2>Creating a Support System</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Accountability Partners</h4><p>Pair up: parent with younger child, parent with teen, older sibling with younger sibling. Check in with your partner daily.</p></div>
+    <div class="s-card"><h4>External Support</h4><p>Reach out to other families attempting the same reset. Trade activity ideas and encourage each other. Sample message: "Our family is doing a 7-day screen time reset starting [date]. Want to join us or plan a tech-free playdate?"</p></div>
+  </div>
+
+  <h2>Gathering Supplies</h2>
+  <div class="cklist-box">
+    <h4>Have Ready Before Day 1</h4>
+    <div class="ci"><span class="ci-dot"></span><strong>Creative:</strong> art supplies (paper, markers, paint, glue), craft materials (fabric, yarn, beads), cooking ingredients, science experiment kits</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Outdoor:</strong> sports equipment (balls, frisbees, jump ropes), magnifying glass, collection bags, picnic supplies, bikes or scooters</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Indoor:</strong> board and card games for a range of ages, puzzles, books, musical instruments</div>
+  </div>
+
+  <div class="callout cg">
+    <div class="callout-label">Pro Tip</div>
+    <p>Set up a labeled device parking station in a common area before Day 1 — one charging spot per family member, including parents.</p>
+  </div>
+
+  <h2>The "Last Screen Night"</h2>
+  <p>The evening before your reset begins, host one special family screen night: watch a favorite movie together, order takeout so no one has to cook, and talk openly about excitement and concerns for the week ahead. Take a "before" photo of everyone on their devices — you'll want it for contrast later — then set every device to charge in its new central spot. This creates closure and builds anticipation instead of dread.</p>
+
+  <!-- CHAPTER 3 -->
+  <div class="ch-hero new-page" style="background:#B8862F;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">3</div>
+    <div class="ch-hero-label">Chapter Three</div>
+    <div class="ch-hero-title">Days 1–2: Establishing Boundaries</div>
+    <div class="ch-hero-desc">The first two days create the structure the rest of the week leans on — physical zones, time blocks, and the bedtime routine that anchors everything.</div>
+  </div>
+
+  <h2>Day 1: Creating Screen-Free Zones</h2>
+  <div class="callout cwork">
+    <div class="callout-label">At Work Today?</div>
+    <p>This schedule assumes a full day at home — ideally Days 1–2 fall on a weekend. If you're working, keep the morning and evening blocks and move the mid-morning, lunch, and afternoon activities to your next day off.</p>
+  </div>
+
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#2D6A8C;color:#FDFBF6;">
+      <div class="sched-head-day">Day One</div>
+      <div class="sched-head-name">Creating Screen-Free Zones</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">7–9 AM</div><div class="sched-content"><strong>Tech-Free Breakfast</strong><p>Review the family agreement. Conversation starter: "What's one thing you're excited to try this week?"</p></div></div>
+      <div class="sched-item"><div class="sched-time">9–11 AM</div><div class="sched-content"><strong>Setting Up Physical Zones</strong><p>Walk through your home together and designate each screen-free zone as a family. Let children help create and decorate the signs. Choose a central location for the device parking station, and label each charging spot with a family member's name. Sample wording — Dining room: "Connection Zone! No phones, tablets, or screens." Bedrooms: "Rest & Recharge Zone." Living room: "Togetherness Zone."</p></div></div>
+      <div class="sched-item"><div class="sched-time">2–4 PM</div><div class="sched-content"><strong>Family Cooking — Homemade Pizza</strong><p>Ingredients: dough, tomato sauce, cheese, assorted toppings. Assign roles: chef, sous chef, ingredient manager, taste tester. Each person builds a mini pizza (20 min), set the table together while it bakes (10 min), then eat and share "roses and thorns" (30 min).</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–8 PM</div><div class="sched-content"><strong>Family Game Night Tournament</strong><p>Quick game (20 min) → strategy game (45 min) → active game like charades (30 min).</p></div></div>
+      <div class="sched-item"><div class="sched-time">8–8:30 PM</div><div class="sched-content"><strong>Evening Reflection Circle</strong><p>Favorite part of today? What felt challenging? What are you looking forward to tomorrow?</p></div></div>
+    </div>
+  </div>
+  <div class="cklist-box">
+    <h4>Day 1 Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>Tech-free breakfast · zones established with signs · parking station created</div>
+    <div class="ci"><span class="ci-dot"></span>First screen-free family meal · evening activity completed · family reflection</div>
+    <div class="ci"><span class="ci-dot"></span>All devices charging in the central location</div>
+  </div>
+
+  <h2>Day 2: Establishing Screen-Free Times</h2>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#3E7A5A;color:#FDFBF6;">
+      <div class="sched-head-day">Day Two</div>
+      <div class="sched-head-name">Establishing Screen-Free Times</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">9–11 AM</div><div class="sched-content"><strong>Nature Scavenger Hunt</strong><p>Checklist: 3 leaf types · a smooth stone · something red · a feather · an interesting stick · evidence of an animal · a flower or bud · something that makes noise · the smallest thing you can find · the most beautiful thing you can find. Brief phone-camera use is fine for photos.</p></div></div>
+      <div class="sched-item"><div class="sched-time">12–1 PM</div><div class="sched-content"><strong>Screen-Free Lunch</strong><p>"If you could have any superpower for a day, what would it be?" Make it collaborative — sandwich bar, salad bar.</p></div></div>
+      <div class="sched-item"><div class="sched-time">2–4 PM</div><div class="sched-content"><strong>Collaborative Family Mural</strong><p>Theme ideas: "Our Family's Favorite Things," "Our Dream Vacation." Choose a theme, sketch, add color, then display prominently.</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–8 PM</div><div class="sched-content"><strong>Family Walk and Talk</strong><p>First 10 min light topics, middle 20 min deeper questions, final 10 min gratitude round — three things each, including one about another family member.</p></div></div>
+      <div class="sched-item"><div class="sched-time">8–9 PM</div><div class="sched-content"><strong>Screen-Free Bedtime Routine</strong><p>Ages 4–7: bath, 2–3 stories, cuddle and talk about the day. Ages 8–12: shower, independent reading, parent check-in. Ages 13+: hygiene, journaling or reading, optional family check-in, calm music.</p></div></div>
+    </div>
+  </div>
+  <div class="cklist-box">
+    <h4>Day 2 Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>Morning screen-free block · tech-free breakfast · outdoor scavenger hunt</div>
+    <div class="ci"><span class="ci-dot"></span>Screen-free lunch with conversation (working parents: a screen-free dinner counts)</div>
+    <div class="ci"><span class="ci-dot"></span>Creative art project · family walk · screen-free bedtime routine · evening reflection</div>
+  </div>
+
+  <div class="pullquote"><p>Designate a central charging station. Everyone's device — including parents' — parks there at 8 PM. Modeling matters more than rules.</p></div>
+
+  <!-- CHAPTER 4 -->
+  <div class="ch-hero new-page" style="background:#2A5C8C;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">4</div>
+    <div class="ch-hero-label">Chapter Four</div>
+    <div class="ch-hero-title">Days 3–4: Engaging Activities</div>
+    <div class="ch-hero-desc">Energy and creativity. Baking, sports, a family time capsule, a talent show, gardening, and a deep dive into nature.</div>
+  </div>
+
+  <h2>Day 3: Creative and Physical Activities</h2>
+  <div class="callout cwork">
+    <div class="callout-label">At Work Today?</div>
+    <p>Run the morning routine before school, then jump straight to the evening block — the talent show fits weeknights well. Save the backyard lunch and outdoor projects for the weekend.</p>
+  </div>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#B8862F;color:#FDFBF6;">
+      <div class="sched-head-day">Day Three</div>
+      <div class="sched-head-name">Creative &amp; Physical Activities</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">8–10 AM</div><div class="sched-content"><strong>Family Baking Project</strong><p>Chocolate chip cookies work for all ages: 2¼ cups flour, 1 tsp baking soda, 1 tsp salt, 1 cup butter, ¾ cup each of granulated and brown sugar, 2 eggs, 2 tsp vanilla, 2 cups chocolate chips. Assign roles: Measurer, Mixer, Shaper, Timer, Taste Tester.</p></div></div>
+      <div class="sched-item"><div class="sched-time">10 AM–12 PM</div><div class="sched-content"><strong>Outdoor Sports Olympics</strong><p>Point system: 1st = 3, 2nd = 2, 3rd = 1, participation = 1. Crown a champion.</p></div></div>
+      <div class="sched-item"><div class="sched-time">1–3 PM</div><div class="sched-content"><strong>Family Time Capsule</strong><p>Supplies: a shoebox or sealed container, decorating materials, paper and pens, small meaningful items. Include a family photo, letters to future selves, a newspaper, current favorites, hand tracings, predictions, and small trinkets. Decorate, write letters, gather items, seal, and choose an opening date one year out.</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–8:30 PM</div><div class="sched-content"><strong>Family Talent Show</strong><p>Prep (6–7 PM): each person prepares a 3–5 minute act. Show time (7–8 PM): host introduces each act, no criticism, only encouragement. Awards (8–8:30 PM): everyone wins a category — Most Creative, Funniest, Most Surprising, Best Effort, Hidden Talent.</p></div></div>
+    </div>
+  </div>
+  <div class="cklist-box">
+    <h4>Day 3 Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>Baking project · sports olympics · time capsule sealed with an opening date one year out</div>
+    <div class="ci"><span class="ci-dot"></span>Talent show performed and awards given</div>
+  </div>
+
+  <h2>Day 4: Nature and Exploration</h2>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#2A5C8C;color:#FDFBF6;">
+      <div class="sched-head-day">Day Four</div>
+      <div class="sched-head-name">Nature &amp; Exploration</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">8–11 AM</div><div class="sched-content"><strong>Family Gardening Project</strong><p>Container garden or a sunny 4×6 foot backyard plot. Roles: Garden Manager, Weed Inspector, Growth Tracker, Harvest Coordinator. Start a weekly Garden Journal.</p></div></div>
+      <div class="sched-item"><div class="sched-time">11 AM–12 PM</div><div class="sched-content"><strong>Outdoor Lunch</strong><p>No-cook picnic or grilling with adult supervision, set up on a blanket on the grass or a folding table in the yard.</p></div></div>
+      <div class="sched-item"><div class="sched-time">1–4 PM</div><div class="sched-content"><strong>Nature Adventure — Choose One</strong><p>Local park exploration (sketching, bird watching, tree ID); a neighborhood discovery walk (find the oldest tree, spot 5 bird species); or backyard investigation stations (insects, soil, weather, shadows).</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–8 PM</div><div class="sched-content"><strong>Storytelling Circle</strong><p>Round-robin story (30 min), personal story sharing (30 min), family history stories from parents or grandparents (30 min). Dim the lights for atmosphere.</p></div></div>
+    </div>
+  </div>
+  <div class="cklist-box">
+    <h4>Day 4 Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>Gardening project started · outdoor lunch completed (or moved to the weekend)</div>
+    <div class="ci"><span class="ci-dot"></span>Nature adventure finished · discoveries documented · storytelling circle held</div>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div class="ch-hero new-page" style="background:#A8502E;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">5</div>
+    <div class="ch-hero-label">Chapter Five</div>
+    <div class="ch-hero-title">Days 5–6: Deepening Connections</div>
+    <div class="ch-hero-desc">Active listening, cultural cooking, community service, and a vulnerability circle. These two days change how your family communicates.</div>
+  </div>
+
+  <h2>Day 5: Communication and Shared Experiences</h2>
+  <div class="callout cwork">
+    <div class="callout-label">At Work Today?</div>
+    <p>These connection activities need unhurried time. On weekdays, use the evening block — cooking together works perfectly on a weeknight — and move the family hike to the second weekend as your reset finale.</p>
+  </div>
+  <div class="callout cd">
+    <div class="callout-label">Active Listening — The Core Skill</div>
+    <p>Each person takes 5 minutes to share while others practice: eye contact, no interrupting, one follow-up question, summarize what you heard.</p>
+  </div>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#A8502E;color:#FDFBF6;">
+      <div class="sched-head-day">Day Five</div>
+      <div class="sched-head-name">Communication &amp; Shared Experiences</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">8–10 AM</div><div class="sched-content"><strong>Active Listening Breakfast</strong><p>Each person shares something they're worried about, excited about, or wish others knew — while others practice active listening.</p></div></div>
+      <div class="sched-item"><div class="sched-time">10 AM–1 PM</div><div class="sched-content"><strong>Cultural Cooking Experience</strong><p>Choose a country, research it (20 min), gather ingredients (30 min), cook together (45–90 min), eat with a cultural theme (30 min).</p></div></div>
+      <div class="sched-item"><div class="sched-time">1–3 PM</div><div class="sched-content"><strong>Family Service Project</strong><p>At-home: cards for nursing home residents, cookies for neighbors. Out in the community: park clean-up, food bank volunteering. Define the goal, assign tasks, set a timeline.</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–8 PM</div><div class="sched-content"><strong>Vulnerability Sharing Circle</strong><p>Ground rules: what's shared stays here, no fixing unless asked, equal time, okay to pass. Prompts by depth — comfortable, deeper, vulnerable.</p></div></div>
+    </div>
+  </div>
+  <div class="callout cg"><div class="callout-label">Gratitude Jar</div><p>Before bed: each person writes 3 things they're grateful for, including one about another family member. Save the jar to reread in a month.</p></div>
+
+  <h2>Day 6: Shared Adventures and Quality Time</h2>
+  <div class="day-schedule">
+    <div class="sched-head" style="background:#6B4A8A;color:#FDFBF6;">
+      <div class="sched-head-day">Day Six</div>
+      <div class="sched-head-name">Shared Adventures &amp; Quality Time</div>
+    </div>
+    <div class="sched-body">
+      <div class="sched-item"><div class="sched-time">7–11 AM</div><div class="sched-content"><strong>Extended Family Hike</strong><p>Before you go: trail suited to the least fit member, water, snacks, sunscreen, first-aid kit, charged phone. Every 15 min rotate: Nature Bingo, Story Stones, Gratitude Rounds, Would You Rather, Silent Walking.</p></div></div>
+      <div class="sched-item"><div class="sched-time">11 AM–1 PM</div><div class="sched-content"><strong>Trail Lunch or Picnic</strong><p>Sandwiches, a custom trail-mix bar, or fresh options. Conversation starter: "If you could bring one person from history on this hike, who would it be?"</p></div></div>
+      <div class="sched-item"><div class="sched-time">2–4 PM</div><div class="sched-content"><strong>Collaborative Project — Choose One</strong><p>Build a fort or treehouse; create a family recipe book; or film a family documentary interviewing each member.</p></div></div>
+      <div class="sched-item"><div class="sched-time">6–9 PM</div><div class="sched-content"><strong>Special Dinner and Reflection</strong><p>Appetizer talk (Rose, Thorn, Bud), main course discussion, dessert dialogue, then build a Reset Week Scrapbook page together.</p></div></div>
+    </div>
+  </div>
+  <div class="cklist-box">
+    <h4>Days 5–6 Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>Active listening practiced · cultural cooking · service project · vulnerability circle held</div>
+    <div class="ci"><span class="ci-dot"></span>Family hike · collaborative project · special dinner · scrapbook page created</div>
+  </div>
+
+  <!-- CHAPTER 6 -->
+  <div class="ch-hero new-page" style="background:#8B6914;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">6</div>
+    <div class="ch-hero-label">Chapter Six</div>
+    <div class="ch-hero-title">Day 7: Reflection and Planning</div>
+    <div class="ch-hero-desc">Measure how far you've come, celebrate every win, and decide what your family looks like from here.</div>
+  </div>
+
+  <h2>Individual Journaling</h2>
+  <p>Give each family member 30 minutes of quiet time to reflect before you come back together.</p>
+  <div class="tmpl">
+    <div class="tmpl-title">7-Day Reset Reflection</div>
+    <div class="tmpl-grid">
+      <div class="tmpl-section"><h5>Daily Highlights</h5><div class="fill-text">Day 1: <div class="fill-line"></div>Day 2: <div class="fill-line"></div>Day 3: <div class="fill-line"></div>Day 4: <div class="fill-line"></div>Day 5: <div class="fill-line"></div>Day 6: <div class="fill-line"></div>Day 7: <div class="fill-line"></div></div></div>
+      <div class="tmpl-section"><h5>Biggest Challenge</h5><div class="fill-line"></div><h5 style="margin-top:8px;">How I Overcame It</h5><div class="fill-line"></div></div>
+      <div class="tmpl-section"><h5>Most Meaningful Moment</h5><div class="fill-line"></div><h5 style="margin-top:8px;">Why It Mattered</h5><div class="fill-line"></div></div>
+      <div class="tmpl-section"><h5>What I Want to Continue</h5><div class="fill-line"></div><h5 style="margin-top:8px;">What I'll Remember Most</h5><div class="fill-line"></div></div>
+    </div>
+  </div>
+  <div class="two-grid">
+    <div class="a-card" style="background:#FBF5E6;border-color:#EAD394;color:#101B33;"><h4>Looking Back</h4><p>Most enjoyable activity? The hardest moment? How did relationships change?</p></div>
+    <div class="a-card" style="background:#EEF3FB;border-color:#C4D3EE;color:#101B33;"><h4>Screen Awareness</h4><p>How much did you think about screens? What did you use that time for instead?</p></div>
+    <div class="a-card" style="background:#FBEBEA;border-color:#E8B8B0;color:#101B33;"><h4>Personal Growth</h4><p>What new skill did you discover? What are you most proud of?</p></div>
+    <div class="a-card" style="background:#F0EEF8;border-color:#D0C4E8;color:#101B33;"><h4>Looking Forward</h4><p>What do you want to continue? What commitment are you making?</p></div>
+  </div>
+
+  <h2>Structured Family Meeting</h2>
+  <p>Come together for a family meeting (10 AM–12 PM works well) to compare notes and measure the week.</p>
+  <div class="case-study">
+    <span class="case-tag">Before / After</span>
+    <h4>Family Screen Time Analysis</h4>
+    <div class="case-row">
+      <div class="case-before"><strong>Before the Reset</strong>Daily hours per person, tech-free meals per week, quality of interaction — from your Chapter 1 audit.</div>
+      <div class="case-after"><strong>After the Reset</strong>Same measures, one week later, plus time gained for connection.</div>
+    </div>
+  </div>
+  <div class="callout cg">
+    <div class="callout-label">Recognition Activity</div>
+    <p>Each person gives one specific appreciation to another: "I noticed when you…" · "I appreciated when you…" · "Thank you for…"</p>
+  </div>
+
+  <h2>Celebrating Wins</h2>
+  <div class="cklist-box">
+    <h4>Achievement Checklist</h4>
+    <div class="ci"><span class="ci-dot"></span>7 screen-free dinners completed</div>
+    <div class="ci"><span class="ci-dot"></span>Tried 5+ new activities as a family</div>
+    <div class="ci"><span class="ci-dot"></span>Had meaningful daily conversations</div>
+    <div class="ci"><span class="ci-dot"></span>Discovered new family interests</div>
+    <div class="ci"><span class="ci-dot"></span>Laughed more, argued less</div>
+    <div class="ci"><span class="ci-dot"></span>Felt more connected as a family</div>
+  </div>
+
+  <h2>Acknowledging Challenges</h2>
+  <p>For each challenge that came up this week — boredom without screens, sibling conflicts, work or school needs, missing friends online, weather limits, parent stress — discuss: What made this difficult? How did we try to address it? How can we prepare for this next time?</p>
+
+  <h2>Creating Sustainable Practices</h2>
+  <div class="tmpl">
+    <div class="tmpl-title">Ongoing Family Screen Time Plan</div>
+    <div class="tmpl-sub">Complete this on Day 7 and post it alongside your original agreement.</div>
+    <div class="tmpl-grid">
+      <div class="tmpl-section"><h5>Daily Screen-Free Times</h5><div class="fill-text">Morning: <div class="fill-line"></div>Evening: <div class="fill-line"></div>All meals stay screen-free ✓</div></div>
+      <div class="tmpl-section"><h5>Weekly Traditions We're Keeping</h5><div class="fill-line"></div><div class="fill-line"></div></div>
+      <div class="tmpl-section"><h5>Family Code Word</h5><p style="font-size:10px;color:#5D6E96;margin-bottom:6px;line-height:1.4;">Anyone can say this to call an emergency family meeting.</p><div class="fill-line" style="border-color:#101B33;border-width:2px;"></div></div>
+      <div class="tmpl-section"><h5>Weekly Screen-Free Blocks</h5><div class="fill-text">Mon: <div class="fill-line"></div>Wed: <div class="fill-line"></div>Fri: <div class="fill-line"></div>Weekend: <div class="fill-line"></div></div></div>
+      <div class="tmpl-section"><h5>Permanent Tech-Free Zones</h5><div class="fill-text">Dining room/kitchen · bedrooms · bathroom · car (except navigation)</div></div>
+      <div class="tmpl-section"><h5>Special Circumstances</h5><div class="fill-text">Family movie night: Fri 7–9 PM · documentaries: weekends · video calls with relatives: anytime · emergencies: always allowed</div></div>
+      <div class="tmpl-section"><h5>Monthly Activity Pool</h5><div class="fill-text">Outdoor: <div class="fill-line"></div>Creative: <div class="fill-line"></div>Learning: <div class="fill-line"></div>Service: <div class="fill-line"></div></div></div>
+    </div>
+    <div class="sig-row">
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Signature</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Date</label><div class="fill-line"></div></div>
+    </div>
+  </div>
+
+  <div class="callout cwork">
+    <div class="callout-label">Monthly Check-In</div>
+    <p>First Sunday of each month: Review (10 min) — what worked, what didn't; Adjust (10 min) — do limits or zones need changing; Plan (10 min) — choose activities from the pool.</p>
+  </div>
+
+  <h2>Emergency Plan &amp; Accountability</h2>
+  <div class="tmpl">
+    <div class="tmpl-title">If Old Screen Habits Return</div>
+    <div class="tmpl-grid">
+      <div class="tmpl-section"><h5>Warning Signs</h5><div class="fill-line"></div><div class="fill-line"></div></div>
+      <div class="tmpl-section"><h5>24-Hour Reset Plan</h5><div class="fill-text">Devices to parking station · schedule an activity within 24 hrs · family meeting · recommit to the agreement</div></div>
+      <div class="tmpl-section"><h5>Family Code Word</h5><div class="fill-line" style="border-color:#101B33;border-width:2px;"></div></div>
+      <div class="tmpl-section"><h5>Systems</h5><div class="fill-text">Daily check-in (5 min before dinner) · weekly Sunday tech review · buddy system pairs</div></div>
+    </div>
+  </div>
+
+  <div class="tmpl" style="text-align:center;">
+    <div class="tmpl-title">Screen Time Reset Champion</div>
+    <div class="tmpl-sub">This certifies that</div>
+    <div class="fill-line" style="max-width:280px;margin:0 auto 12px;"></div>
+    <p style="text-align:center;font-size:11px;color:#5D6E96;margin-bottom:12px;">successfully completed the 7-Day Screen Time Reset, with the achievement of</p>
+    <div class="fill-line" style="max-width:280px;margin:0 auto 16px;"></div>
+    <div class="sig-row" style="grid-template-columns:1fr 1fr;max-width:340px;margin:0 auto;">
+      <div class="sig-block"><label>Date</label><div class="fill-line"></div></div>
+      <div class="sig-block"><label>Signed</label><div class="fill-line"></div></div>
+    </div>
+  </div>
+
+  <div class="cklist-box">
+    <h4>Celebration and Closing Ritual</h4>
+    <div class="ci"><span class="ci-dot"></span>Special outing or home celebration — favorite dinner, cake, dance party</div>
+    <div class="ci"><span class="ci-dot"></span>Awards ceremony: Best Team Player, Most Creative, Strongest Screen Resistance</div>
+    <div class="ci"><span class="ci-dot"></span>Add reflection letters and photos to the Day 3 time capsule</div>
+    <div class="ci"><span class="ci-dot"></span>Closing ritual: group hug, plant a tree, light a candle, or sign and frame the agreement</div>
+  </div>
+
+  <!-- CHAPTER 7 -->
+  <div class="ch-hero new-page" style="background:#101B33;color:#FDFBF6;">
+    <div class="ch-hero-bg-num">7</div>
+    <div class="ch-hero-label">Chapter Seven</div>
+    <div class="ch-hero-title">Long-Term Success Strategies</div>
+    <div class="ch-hero-desc">The reset is just the beginning. Here's how to make the changes permanent.</div>
+  </div>
+
+  <h2>The First 30 Days After Reset</h2>
+  <p>Momentum fades unless you keep tending it. Here's the maintenance rhythm that keeps a 7-day reset from becoming a 7-day memory.</p>
+  <div class="two-grid">
+    <div class="s-card"><h4>Weeks 1–2</h4><p>Expect regression — normal. Review the agreement daily, keep zones strict, maintain 3+ screen-free dinners.</p></div>
+    <div class="s-card"><h4>Weeks 3–4</h4><p>Evaluate what's working. Adjust limits if needed, but don't abandon them. Add one new tradition.</p></div>
+  </div>
+
+  <h2>Creating Family Traditions</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Weekly — Tech-Free Tuesday</h4><p>One guaranteed screen-free dinner with a rotating conversation theme.</p></div>
+    <div class="s-card"><h4>Weekly — Sunday Morning Adventure</h4><p>No screens until noon, an outdoor activity, and a special breakfast.</p></div>
+    <div class="s-card"><h4>Weekly — Friday Family Fun Night</h4><p>A rotating activity chooser with homemade treats.</p></div>
+    <div class="s-card"><h4>Monthly Rhythm</h4><p>First Friday: family meeting. Third Saturday: an all-day adventure. Last Sunday: a service day.</p></div>
+  </div>
+
+  <h2>Age-Specific Strategies</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Toddlers (1–3)</h4><p>Minimal exposure except video calls. Never use screens as a pacifier. Sensory play, reading, music.</p></div>
+    <div class="s-card"><h4>Young Children (4–7)</h4><p>Max 1 hour of quality content daily, co-viewing when possible. Imaginative play, building, art.</p></div>
+    <div class="s-card"><h4>Tweens (8–12)</h4><p>1–2 hours recreational after homework. Earn time through responsibilities.</p></div>
+    <div class="s-card"><h4>Teens (13–18)</h4><p>2–3 hours recreational, more autonomy with accountability. Focus on the relationship over the rules.</p></div>
+  </div>
+
+  <h2>Handling Difficult Scenarios</h2>
+  <div class="cklist-box">
+    <h4>Common Scenarios and Responses</h4>
+    <div class="ci"><span class="ci-dot"></span><strong>Homework needs a screen:</strong> supervised station, timer, no multitasking, hard stop.</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Bad weather:</strong> fort building, indoor scavenger hunt, cooking project, board game marathon.</div>
+    <div class="ci"><span class="ci-dot"></span><strong>A parent travels:</strong> scheduled video call as the one exception.</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Kids visit friends:</strong> talk to other parents, send a non-screen activity idea.</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Holidays/vacations:</strong> relax some limits but keep screen-free meals and bedtime rules.</div>
+    <div class="ci"><span class="ci-dot"></span><strong>Facing resistance:</strong> acknowledge feelings, remind of the agreement, offer a choice within limits.</div>
+  </div>
+
+  <h2>Tools and Resources</h2>
+  <div class="two-grid">
+    <div class="s-card"><h4>Physical Tools</h4><p>Device parking station with individual labeled spots · a timer for screen-time blocks · an activity cabinet.</p></div>
+    <div class="s-card"><h4>Family Activity Binder</h4><p>Activity pool list, favorite recipes, conversation-starter cards, game rules, local attraction ideas.</p></div>
+  </div>
+
+  <h2>Measuring Success</h2>
+  <div class="cklist-box">
+    <h4>Weekly Tracking Sheet</h4>
+    <div class="fill-text">Mon–Sun daily screen-time hours vs. goal · screen-free meals: ___ / 21 · family activities: ___ (goal 3+)</div>
+  </div>
+  <div class="callout cg">
+    <div class="callout-label">Success Looks Like</div>
+    <p>More spontaneous conversation · increased laughter · fewer arguments about screens · better sleep · stronger family relationships.</p>
+  </div>
+  <div class="callout cr">
+    <div class="callout-label">When to Seek Support</div>
+    <p>If a child shows extreme anger when devices are removed, sneaks devices, or shows declining grades — consider a family therapist, pediatrician, or school counselor. Getting help is a strength, not a failure.</p>
+  </div>
+
+  <div class="callout cd" style="margin-top:24px;text-align:center;padding:26px 24px;">
+    <div class="callout-label" style="text-align:center;">Final Encouragement</div>
+    <p style="font-family:'Lora',serif;font-style:italic;font-size:14px;line-height:1.6;margin-bottom:10px;color:#FDFBF6;">Your family has incredible potential for connection, growth, and joy. The changes you make today create the family culture of tomorrow.</p>
+    <p style="font-size:11.5px;">Screens aren't the enemy. Mindless consumption is. Progress over perfection. Your family is worth it.</p>
+  </div>
+
+  <div style="text-align:center;padding:24px 0 4px;color:#8A8570;font-size:10.5px;border-top:1px solid #E4DCC8;margin-top:24px;break-inside:avoid;">
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;color:#101B33;font-weight:600;margin-bottom:3px;text-transform:uppercase;">Lawrence Martin</div>
+    Screens Down, Family Up &nbsp;·&nbsp; © 2025 &nbsp;·&nbsp; All rights reserved
+  </div>
+
+</doc-page>
+
+<script src="./doc-page.js"></script>
+</body>
+</html>
